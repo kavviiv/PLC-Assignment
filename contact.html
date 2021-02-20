@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/contact.css">
+    <script src="js/de.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+   
+    <title>Document</title>
+</head>
+<body>
+    <div class="topnav">
+        <!-- Centered link -->
+        <div class="topnav-centered">
+        <a href="main.html">Home</a>
+        </div>
+    
+        <!-- Left-aligned links (default) -->
+        <a href="#contact" class="active">Contact</a>
+    
+        
+    </div>
+    <div class="container mt-3">
+        <h2>ค้นหาข้อมูลตัวแทนขาย</h2>
+        <p>กรุณากรอกชื่อ/นามสกุล หรือเบอร์โทรศัพท์ของผู้ขาย</p>  
+        <input class="form-control" id="myInput" type="text" placeholder="Search..">
+        <br>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Firstname</th>
+              <th>Lastname</th>
+              <th>Telphone Number</th>
+            </tr>
+          </thead>
+          <tbody id="myTable">
+            <tr>
+              <td>Thitiporn</td>
+              <td>Janyo</td>
+              <td>60020604</td>
+            </tr>
+            <tr>
+              <td>Kawin</td>
+              <td>Singhanat</td>
+              <td>60022628</td>
+            </tr>
+            <tr>
+              <td>Thirakarn</td>
+              <td>Kunalai</td>
+              <td>60022707</td>
+            </tr>
+            <tr>
+              <td>Kaewta</td>
+              <td>Tupila</td>
+              <td>60023157</td>
+            </tr>
+          </tbody>
+        </table>
+      
+      </div>
+      
+      <script>
+      $(document).ready(function(){
+        $("#myInput").on("keyup", function() {
+          var value = $(this).val().toLowerCase();
+          $("#myTable tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+          });
+        });
+      });
+      </script>
+      
+      
+    
+</body>
+</html>
